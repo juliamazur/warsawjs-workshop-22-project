@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        const template = `
+  <div class="application">
+    <div class="title">Wirtualny Kantor</div>
+    <div class="rates"></div>
+    <div class="form">
+      <form>
+        <div class="form-row">
+          <label>
+            <input type="radio" name="operation" value="buy"> Kupuje
+          </label>
+          <label>
+            <input type="radio" name="operation" value="sell"> Sprzedaje
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            Sprzedaje <select name="currency-from"></select>
+          </label>
+          <label>
+            Kupuje <select name="currency-to"></select>
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            Kwota
+            <input type="number" />
+          </label>
+        </div>
+      </form>
+    </div>
+  </div>
+`;
+
+        class Application {
+            initialize(root) {
+                root.innerHTML = template;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function(){
+            const app = new Application();
+            app.initialize(document.getElementById('root'));
+        })
+
+    </script>
+
+</head>
+<body>
+<div id="root">Mount point</div>
+</body>
+</html>
